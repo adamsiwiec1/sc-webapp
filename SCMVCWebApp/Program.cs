@@ -13,42 +13,18 @@ namespace SCMVCWebApp
 {
     public class Program
     {
-        public static void Main(string[] args)
-        {
-            var host = CreateHostBuilder(args);//.Run();
-
-            host = host.Build();
-
-            using (var scope = host.Services.CreateScope())
+       
+            public static void Main(string[] args)
             {
-                var services = scope.ServiceProvider;
-
-                try
-                {
-                    //object or instance method
-
-                    DbInitializer.Initialize(services);
-
-                }
-                catch (Exception ex)
-                {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occured creating the DB.");
-                }
+                CreateHostBuilder(args).Build().Run();
             }
 
-            host.Run();
-
-        }//end Main method
-
-
-
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+            public static IHostBuilder CreateHostBuilder(string[] args) =>
+                Host.CreateDefaultBuilder(args)
+                    .ConfigureWebHostDefaults(webBuilder =>
+                    {
+                        webBuilder.UseStartup<Startup>();
+                    });
+        }
 
     }//end class (Program)
-}
