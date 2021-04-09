@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using SCMVCWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,4 +44,5 @@ namespace SCMVCWebApp.Data
                 roleManager.CreateAsync(role).Wait();
             }
         }
+    }
 }

@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SmartAdmin.WebUI.Models;
+using SCMVCWebApp.Models;
 
-namespace SmartAdmin.WebUI.EndPoints
+namespace SCMVCWebApp.EndPoints
 {
     [ApiController]
     [Route("api/roles")]

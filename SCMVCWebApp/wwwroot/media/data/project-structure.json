@@ -1,5 +1,5 @@
 {
-	"smartadmin-html-full": {
+	"SCMVCWebApphtml-full": {
 		"build.json": "/build.json",
 		"devnotes.txt": "/devnotes.txt",
 		"gulpfile.js": "/gulpfile.js",

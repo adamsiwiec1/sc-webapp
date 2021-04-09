@@ -9,7 +9,7 @@ using System.Text.Json.Serialization;
 
 namespace SCMVCWebApp.Models
 {
-    /// <summary>Provides easy-access to building the SmartAdmin Navigation using JSON text data.</summary>
+    /// <summary>Provides easy-access to building the SCMVCWebAppNavigation using JSON text data.</summary>
     /// <remarks>These classes are solely created for Demo purposes, please do not use them in Production.</remarks>
     internal static class NavigationBuilder
     {

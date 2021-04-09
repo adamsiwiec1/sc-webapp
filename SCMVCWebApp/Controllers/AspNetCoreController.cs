@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SmartAdmin.WebUI.Controllers
+namespace SCMVCWebApp.Controllers
 {
     [AllowAnonymous]
     public class AspNetCoreController : Controller

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SmartAdmin.WebUI.Models;
+using SCMVCWebApp.Models;
 
-namespace SmartAdmin.WebUI.ViewComponents
+namespace SCMVCWebApp.ViewComponents
 {
     public class NavigationViewComponent : ViewComponent
     {

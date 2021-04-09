@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SCMVCWebApp.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,9 @@ namespace SCMVCWebApp
     {
         public static void Main(string[] args)
         {
-            var host = CreateHostBuilder(args).Build();//.Run();
+            var host = CreateHostBuilder(args);//.Run();
+
+            host = host.Build();
 
             using (var scope = host.Services.CreateScope())
             {

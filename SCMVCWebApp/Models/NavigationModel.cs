@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using SmartAdmin.WebUI.Extensions;
+using SCMVCWebApp.Extensions;
 
 namespace SCMVCWebApp.Models
 {

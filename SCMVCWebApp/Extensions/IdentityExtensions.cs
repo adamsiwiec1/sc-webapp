@@ -5,10 +5,10 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Identity;
-using SmartAdmin.WebUI.Data;
-using SmartAdmin.WebUI.Models;
+using SCMVCWebApp.Data;
+using SCMVCWebApp.Models;
 
-namespace SmartAdmin.WebUI.Extensions
+namespace SCMVCWebApp.Extensions
 {
     public static class IdentityExtensions
     {

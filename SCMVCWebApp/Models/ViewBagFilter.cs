@@ -12,7 +12,7 @@ namespace SCMVCWebApp.Models
         {
             if (context.Controller is Controller controller)
             {
-                // SmartAdmin Toggle Features
+                // SCMVCWebAppToggle Features
                 controller.ViewBag.AppSidebar = Enabled;
                 controller.ViewBag.AppHeader = Enabled;
                 controller.ViewBag.AppLayoutShortcut = Enabled;
@@ -21,9 +21,9 @@ namespace SCMVCWebApp.Models
                 controller.ViewBag.ChatInterface = Enabled;
                 controller.ViewBag.LayoutSettings = Enabled;
 
-                // SmartAdmin Default Settings
-                controller.ViewBag.App = "SmartAdmin";
-                controller.ViewBag.AppName = "SmartAdmin WebApp";
+                // SCMVCWebAppDefault Settings
+                controller.ViewBag.App = "SCMVCWebApp";
+                controller.ViewBag.AppName = "SCMVCWebAppWebApp";
                 controller.ViewBag.AppFlavor = "ASP.NET Core 3.1";
                 controller.ViewBag.AppFlavorSubscript = ".NET Core 3.1";
                 controller.ViewBag.IconPrefix = "fal";
@@ -36,8 +36,8 @@ namespace SCMVCWebApp.Models
                 controller.ViewBag.Bs4v = "4.3";
                 controller.ViewBag.Logo = "logo.png";
                 controller.ViewBag.LogoM = "logo.png";
-                controller.ViewBag.Copyright = "2020 © SmartAdmin for ASP.NET Core 3.1 by&nbsp;<a href='https://wrapbootstrap.com/theme/smartadmin-asp.net-core-responsive-webapp-WB073L89G?ref=Walapa' class='text-primary fw-500' title='Walapa' target='_blank'>Walapa</a>";
-                controller.ViewBag.CopyrightInverse = "2020 © SmartAdmin for ASP.NET Core 3.1 by&nbsp;<a href='https://wrapbootstrap.com/theme/smartadmin-asp.net-core-responsive-webapp-WB073L89G?ref=Walapa' class='text-white opacity-40 fw-500' title='Walapa' target='_blank'>Walapa</a>";
+                controller.ViewBag.Copyright = "2020 © SCMVCWebAppfor ASP.NET Core 3.1 by&nbsp;<a href='https://wrapbootstrap.com/theme/SCMVCWebAppasp.net-core-responsive-webapp-WB073L89G?ref=Walapa' class='text-primary fw-500' title='Walapa' target='_blank'>Walapa</a>";
+                controller.ViewBag.CopyrightInverse = "2020 © SCMVCWebAppfor ASP.NET Core 3.1 by&nbsp;<a href='https://wrapbootstrap.com/theme/SCMVCWebAppasp.net-core-responsive-webapp-WB073L89G?ref=Walapa' class='text-white opacity-40 fw-500' title='Walapa' target='_blank'>Walapa</a>";
             }
         }
 

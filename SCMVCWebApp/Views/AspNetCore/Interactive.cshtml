@@ -1,6 +1,6 @@
 @using System.Security.Claims
-@using SmartAdmin.WebUI.Data
-@using SmartAdmin.WebUI.Pages
+@using SCMVCWebApp.Data
+@using SCMVCWebApp.Pages
 @inject ApplicationDbContext DbContext
 @{
     ViewData["Title"] = "Interactive Instructions";
@@ -41,7 +41,7 @@
                     <section>
                         <ol class="list-spaced">
                             <li>
-                                Navigate to the folder containing the extracted project package and double-click the <code>SmartAdminCore.sln</code> file
+                                Navigate to the folder containing the extracted project package and double-click the <code>SCMVCWebAppore.sln</code> file
                             </li>
                             <li>
                                 Once the solution has finished loading open the <code>nav.json</code> file in the root of the project
@@ -109,7 +109,7 @@
                     <section>
                         <ol class="list-spaced">
                             <li>
-                                Navigate to the folder containing the extracted project package and double-click the <code>SmartAdminCore.sln</code> file
+                                Navigate to the folder containing the extracted project package and double-click the <code>SCMVCWebAppore.sln</code> file
                             </li>
                             <li>
                                 Once the solution has finished loading open the <code>Startup.cs</code> file in the root of the project
@@ -128,7 +128,7 @@
                                     <strong>Note:</strong> You might get a warning or an error stating that <code>UseSqlServer</code> is not recognized, this means we will need to add a reference to the <strong>SqlServer</strong> NuGet package for Entity Framework Core
                                 </div>
                             </li>
-                            <li>Right click the <strong>SmartAdmin.WebUI</strong> project and choose the option: <code>Edit Project File</code></li>
+                            <li>Right click the <strong>SCMVCWebApp</strong> project and choose the option: <code>Edit Project File</code></li>
                             <li>
                                 With the file open goto around <code>Line 17</code> and you should see the following line of code:
                                 <pre class="prettyprint lang-xml mb-0 mt-2">&lt;PackageReference Include=&quot;Microsoft.EntityFrameworkCore.Sqlite&quot; Version=&quot;3.1.2&quot; /&gt;</pre>
@@ -137,7 +137,7 @@
                                 Change or Replace this line of code with the following line of code:
                                 <pre class="prettyprint lang-xml mb-0 mt-2">&lt;PackageReference Include=&quot;Microsoft.EntityFrameworkCore.SqlServer&quot; Version=&quot;3.1.2&quot; /&gt;</pre>
                                 <div class="alert alert-info mb-0 mt-1 p-1">
-                                    <strong>Note:</strong> You can also change the NuGet packages of your project by right-clicking the <strong>SmartAdminCore</strong> solution and choosing the option: <code>Manage NuGet Packages for Solution..</code>
+                                    <strong>Note:</strong> You can also change the NuGet packages of your project by right-clicking the <strong>SCMVCWebAppore</strong> solution and choosing the option: <code>Manage NuGet Packages for Solution..</code>
                                 </div>
                             </li>
                             <li>Last but not least we will need to modify the <strong>ConnectionString</strong> of the application to connect to your SQL Server instance</li>
@@ -195,7 +195,7 @@
                     <section>
                         <ol class="list-spaced">
                             <li>
-                                Navigate to the folder containing the extracted project package and double-click the <code>SmartAdminCore.sln</code> file
+                                Navigate to the folder containing the extracted project package and double-click the <code>SCMVCWebAppore.sln</code> file
                             </li>
                             <li>
                                 Once the solution has finished loading open the <code>Startup.cs</code> file in the root of the project
@@ -246,7 +246,7 @@
                             </li>
                             <li>
                                 Now rebuild your project and launch it! If everything went well then the item below should show you the rendered contents
-                                of the <code>HelloWorld.razor</code> file located in the <strong>Pages</strong> folder in the root of your Project; Blazor support should now be available in SmartAdmin!
+                                of the <code>HelloWorld.razor</code> file located in the <strong>Pages</strong> folder in the root of your Project; Blazor support should now be available in SCMVCWebApp
                             </li>
                             <component type="typeof(HelloWorld)" render-mode="ServerPrerendered" />
                         </ol>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace SmartAdmin.WebUI.Extensions
+namespace SCMVCWebApp.Extensions
 {
     public static class EnumerableExtensions
     {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace SmartAdmin.WebUI.Controllers
+namespace SCMVCWebApp.Controllers
 {
     public class FormController : Controller
     {

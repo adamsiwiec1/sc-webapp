@@ -33,7 +33,7 @@
    {
       "plugin":"JquerySnippets",
       "url":"https://www.gotbootstrap.com",
-      "license":"Part of SmartAdmin WebApp",
+      "license":"Part of SCMVCWebAppWebApp",
       "description":"Contains a bunch of jQuery snippets that are re-usable in many types of applications"
    },
    {
@@ -52,12 +52,12 @@
       "plugin":"waves",
       "url":"http://fian.my.id/Waves/#start",
       "license":"MIT",
-      "description":"Waves is an external library that we've included in SmartAdmin to allow us to create the ink effect you notice on Google's Material Design concept. To put the waves effect on an element, you just add the class .js-waves-on. Waves are automatically attached to all .btn classes and nav elements, if you like to turn this feature off for any reason you can add .js-waves-off"
+      "description":"Waves is an external library that we've included in SCMVCWebAppto allow us to create the ink effect you notice on Google's Material Design concept. To put the waves effect on an element, you just add the class .js-waves-on. Waves are automatically attached to all .btn classes and nav elements, if you like to turn this feature off for any reason you can add .js-waves-off"
    },
    {
       "plugin":"SmartPanels",
       "url":"https://www.gotbootstrap.com",
-      "license":"Part of SmartAdmin WebApp",
+      "license":"Part of SCMVCWebAppWebApp",
       "description":"Turn your ordinary panels to SmartPanel. Smartpanels lets you add buttons dynamically to panel header using data attributes. All panels are Sortable across all bootstrap col-spans and uses localStorage to store position, color, collapse state and various other panel settings. Use built in hooks to detect state change of panels and execute your script."
    },
    {
@@ -178,7 +178,7 @@
       "plugin":"Cropper",
       "url":"https://github.com/fengyuanchen/cropperjs/blob/master/README.md",
       "license":"MIT",
-      "description":"Cropperjs is a slick and lightweight responsive cropping tool for images. It supports 39 options, 27 methods and 6 events. You can select an specific area of an image, and then upload the coordinates data to server-side to crop the image, or crop the image on browser-side directly. The plugin is regularly updated and has tons of potential! Making it a great fit for SmartAdmin WebApp."
+      "description":"Cropperjs is a slick and lightweight responsive cropping tool for images. It supports 39 options, 27 methods and 6 events. You can select an specific area of an image, and then upload the coordinates data to server-side to crop the image, or crop the image on browser-side directly. The plugin is regularly updated and has tons of potential! Making it a great fit for SCMVCWebAppWebApp."
    },
    {
       "plugin":"Select2",
@@ -207,14 +207,14 @@
    {
       "plugin":"Lightgallery",
       "url":"https://sachinchoolur.github.io/lightGallery/",
-      "license":"A part of SmartAdmin Template",
-      "description":"LightGallery is a premium plugin, market value of $100, included as part of SmartAdmin WebApp, meaning you do not need to purchase a separate license for LightGallery when using it with SmartAdmin. This professional plugin is extreamly popular among the photographic community and comes packed with tons of features and goodies."
+      "license":"A part of SCMVCWebAppTemplate",
+      "description":"LightGallery is a premium plugin, market value of $100, included as part of SCMVCWebAppWebApp, meaning you do not need to purchase a separate license for LightGallery when using it with SCMVCWebApp This professional plugin is extreamly popular among the photographic community and comes packed with tons of features and goodies."
    },
    {
       "plugin":"AltEditor",
       "url":"https://github.com/KasperOlesen/DataTable-AltEditor",
-      "license":"A part of SmartAdmin Template",
-      "description":"DataTables AltEditor is a MIT licensed free editor. The plugin adds capabilities to add, edit and delete rows in your datatables through the use of modals. We have modified the editor extensively to be used with SmartAdmin WebApp and make your job a little easier. This current version of AltEditor is exclusive to SmartAdmin and we intend to keep it up to date to be compatible with DataTables."
+      "license":"A part of SCMVCWebAppTemplate",
+      "description":"DataTables AltEditor is a MIT licensed free editor. The plugin adds capabilities to add, edit and delete rows in your datatables through the use of modals. We have modified the editor extensively to be used with SCMVCWebAppWebApp and make your job a little easier. This current version of AltEditor is exclusive to SCMVCWebAppand we intend to keep it up to date to be compatible with DataTables."
    },
    {
       "plugin":"Jqvmap",

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace SmartAdmin.WebUI.Areas.Authorization.Pages
+namespace SCMVCWebApp.Areas.Authorization.Pages
 {
     [Authorize]
     public class RoleModel : PageModel
