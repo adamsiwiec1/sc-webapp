@@ -12,7 +12,6 @@ namespace SCMVCWebApp.Models
     {
         //No need for prim key/id bcuz it is inherited from IdentityUser
 
-
         [Required]
         public string FirstName { get; set; }
 
