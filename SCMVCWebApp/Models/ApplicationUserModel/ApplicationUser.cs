@@ -10,7 +10,6 @@ namespace SCMVCWebApp.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        //No need for prim key/id bcuz it is inherited from IdentityUser
 
         [Required]
         public string FirstName { get; set; }
@@ -18,18 +17,15 @@ namespace SCMVCWebApp.Models
         [Required]
         public string LastName { get; set; }
 
-        public string FullName { get; set; }
+        public string FullName { get { return (FirstName + " " + LastName); } }
 
         [Required]
         public string Address { get; set; }
 
-
-
-        public ApplicationUser(string firstname, string lastname, string address, string phoneNumber, string email, string password, int majorID)
+        public ApplicationUser(string firstname, string lastname, string address, string phoneNumber, string email, string password)
         {
             this.FirstName = firstname;
             this.LastName = lastname;
-            this.FullName = firstname + " " + lastname;
             this.Address = address;
             this.PhoneNumber = phoneNumber;
             this.Email = email;
