@@ -15,9 +15,7 @@ namespace SCMVCWebApp
     {
         public static void Main(string[] args)
         {
-            var host = CreateHostBuilder(args);//.Run();
-
-            host = host.Build();
+            var host = CreateHostBuilder(args).Build();//.Run();
 
             using (var scope = host.Services.CreateScope())
             {
@@ -28,7 +26,8 @@ namespace SCMVCWebApp
                     //object or instance method
 
                     DbInitializer.Initialize(services);
-
+                    //DbInitializer dbInitializer = new DbInitializer();
+                    //dbInitializer.Initialize(services);
                 }
                 catch (Exception ex)
                 {

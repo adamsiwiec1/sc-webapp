@@ -37,11 +37,11 @@ namespace SCMVCWebApp.EndPoints
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IdentityUser>> Get([FromRoute]string id) => Ok(await _manager.FindByIdAsync(id));
+        public async Task<ActionResult<IdentityUser>> Get([FromRoute] string id) => Ok(await _manager.FindByIdAsync(id));
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<IActionResult> Create([FromForm]IdentityUser model)
+        public async Task<IActionResult> Create([FromForm] IdentityUser model)
         {
             model.Id = Guid.NewGuid().ToString();
             model.UserName = model.Email;
@@ -65,7 +65,7 @@ namespace SCMVCWebApp.EndPoints
 
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> Update([FromForm]IdentityUser model)
+        public async Task<IActionResult> Update([FromForm] IdentityUser model)
         {
             var result = await _context.UpdateAsync(model, model.Id);
 
@@ -79,7 +79,7 @@ namespace SCMVCWebApp.EndPoints
 
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> Delete([FromForm]IdentityUser model)
+        public async Task<IActionResult> Delete([FromForm] IdentityUser model)
         {
             // HACK: The code below is just for demonstration purposes!
             // Please use a different method of preventing the currently logged in user from being removed

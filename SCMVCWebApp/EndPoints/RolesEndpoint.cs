@@ -33,11 +33,11 @@ namespace SCMVCWebApp.EndPoints
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IdentityRole>> Get([FromRoute]string id) => Ok(await _manager.FindByIdAsync(id));
+        public async Task<ActionResult<IdentityRole>> Get([FromRoute] string id) => Ok(await _manager.FindByIdAsync(id));
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<IActionResult> Create([FromForm]IdentityRole model)
+        public async Task<IActionResult> Create([FromForm] IdentityRole model)
         {
             model.Id = Guid.NewGuid().ToString();
             model.ConcurrencyStamp = Guid.NewGuid().ToString();
@@ -54,7 +54,7 @@ namespace SCMVCWebApp.EndPoints
 
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> Update([FromForm]IdentityRole model)
+        public async Task<IActionResult> Update([FromForm] IdentityRole model)
         {
             var result = await _manager.UpdateAsync(model);
 
@@ -68,7 +68,7 @@ namespace SCMVCWebApp.EndPoints
 
         [HttpDelete]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> Delete([FromForm]IdentityRole model)
+        public async Task<IActionResult> Delete([FromForm] IdentityRole model)
         {
             // HACK: The code below is just for demonstration purposes!
             // Please use a different method of preventing the default role from being removed
