@@ -15,30 +15,7 @@ namespace SCMVCWebApp
     {
         public static void Main(string[] args)
         {
-            var host = CreateHostBuilder(args);//.Run();
-
-            host = host.Build();
-
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-
-                try
-                {
-                    //object or instance method
-
-                    DbInitializer.Initialize(services);
-
-                }
-                catch (Exception ex)
-                {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occured creating the DB.");
-                }
-            }
-
-            host.Run();
-
+            CreateHostBuilder(args).Build().Run();
         }//end Main method
 
 
