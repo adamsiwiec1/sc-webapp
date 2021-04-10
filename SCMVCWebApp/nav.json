@@ -6,97 +6,75 @@
       "roles": []
     },
     {
-      "title": "Welcome",
+      "title": "Dashboard",
       "href": "aspnetcore_welcome.html",
       "icon": "fal fa-graduation-cap",
       "roles": []
     },
     {
-      "title": "Authorization",
-      "icon": "fal fa-shield-alt",
+      "title": "Projects",
+      "icon": "fal fa-folder-open",
       "roles": [
         "Administrator"
       ],
       "items": [
         {
-          "title": "Users",
+          "title": "In progress",
           "href": "authorization_users.html",
           "roles": []
         },
         {
-          "title": "Roles",
+          "title": "Completed",
           "href": "authorization_roles.html",
           "roles": []
         }
       ]
     },
     {
-      "title": "Solution Overview",
-      "icon": "fal fa-folder-open",
+      "title": "Services",
+      "icon": "fal fa-shield-alt",
       "roles": [],
       "items": [
         {
-          "title": "Editions",
-          "showOnSeed": false,
+          "title": "Penetration Testing",
           "href": "aspnetcore_editions.html",
           "roles": []
         },
         {
-          "title": "FAQ",
+          "title": "Database Management",
           "href": "aspnetcore_faq.html",
           "roles": []
         },
         {
-          "title": "Interactive",
-          "showOnSeed": false,
+          "title": "Web Design",
+          "href": "aspnetcore_interactive.html",
+          "roles": []
+        },
+        {
+          "title": "Security solutions",
+          "href": "aspnetcore_interactive.html",
+          "roles": []
+        },
+        {
+          "title": "General IT Support",
           "href": "aspnetcore_interactive.html",
           "roles": []
         }
       ]
     },
     {
-      "title": "Documentation",
+      "title": "Billing",
       "icon": "fal fa-book",
       "roles": [],
       "items": [
         {
-          "title": "Introduction",
+          "title": "My Invoices",
           "href": "documentation_introduction.html",
           "roles": []
         },
         {
-          "title": "Getting Started",
+          "title": "Current Costs",
           "href": "documentation_getting_started.html",
-          "roles": []
-        },
-        {
-          "title": "Site Structure",
-          "href": "documentation_site_structure.html",
-          "roles": []
-        },
-        {
-          "title": "Solution Architecture",
-          "href": "documentation_solution_architecture.html",
-          "roles": []
-        },
-        {
-          "title": "Customizations",
-          "href": "documentation_customizations.html",
-          "roles": []
-        },
-        {
-          "title": "Howto Contribute",
-          "href": "documentation_howto_contribute.html",
-          "roles": []
-        },
-        {
-          "title": "Licensing Information",
-          "href": "documentation_licensing_information.html",
-          "roles": []
-        },
-        {
-          "title": "Changelog",
-          "href": "documentation_changelog.html",
           "roles": []
         }
       ]
