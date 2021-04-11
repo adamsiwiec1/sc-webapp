@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using SCMVCWebApp.Data;
 using SCMVCWebApp.Models;
+using SCMVCWebApp.Services;
 
 namespace SCMVCWebApp
 {

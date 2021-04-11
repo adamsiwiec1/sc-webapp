@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using SCMVCWebApp.Models;
+using SCMVCWebApp.Models.ClientModel;
+using SCMVCWebApp.Models.ConsultantModel;
 
 namespace SCMVCWebApp.Areas.Identity.Pages.Account
 {
@@ -96,10 +98,32 @@ namespace SCMVCWebApp.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
+
+
+
+                ApplicationUser user = null;
+
+
+                if (Input.UserRole == "Administrator")
+                {
+                    user = new ApplicationUser(Input.Firstname, Input.Lastname, Input.Address, Input.Phone, Input.Email, Input.Password);
+
+                }
+                else if (Input.UserRole == "Client")
+                {
+                    user = new Client(Input.Firstname, Input.Lastname, Input.Address, Input.Phone, Input.Email, Input.Password);
+
+                }
+                else if (Input.UserRole == "Consultant")
+                {
+                    user = new Consultant(Input.Firstname, Input.Lastname, Input.Address, Input.Phone, Input.Email, Input.Password, "TBD");
+
+                }
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
                 if (result.Succeeded)
                 {
+                    _userManager.AddToRoleAsync(user, Input.UserRole).Wait();
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

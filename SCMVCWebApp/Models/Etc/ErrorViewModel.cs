@@ -10,12 +10,4 @@ namespace SCMVCWebApp.Models
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
-
-    public class EmailSender : IEmailSender
-    {
-        public Task SendEmailAsync(string email, string subject, string htmlMessage)
-        {
-            throw new NotImplementedException("No email provider is implemented by default, please Google on how to add one, like SendGrid.");
-        }
-    }
 }
