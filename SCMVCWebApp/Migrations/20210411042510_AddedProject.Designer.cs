@@ -10,8 +10,8 @@ using SCMVCWebApp.Data;
 namespace SCMVCWebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210410192145_Reset")]
-    partial class Reset
+    [Migration("20210411042510_AddedProject")]
+    partial class AddedProject
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -227,6 +227,26 @@ namespace SCMVCWebApp.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("SCMVCWebApp.Models.CompanyModel.Company", b =>
+                {
+                    b.Property<int>("CompanyID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CompanyID");
+
+                    b.ToTable("Company");
+                });
+
             modelBuilder.Entity("SCMVCWebApp.Models.ProjectModel.Project", b =>
                 {
                     b.Property<int>("ProjectID")
@@ -234,11 +254,16 @@ namespace SCMVCWebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CompanyID")
+                        .HasColumnType("int");
+
                     b.Property<string>("ProjectName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProjectID");
+
+                    b.HasIndex("CompanyID");
 
                     b.ToTable("Project");
                 });
@@ -266,6 +291,11 @@ namespace SCMVCWebApp.Migrations
                 {
                     b.HasBaseType("SCMVCWebApp.Models.ApplicationUser");
 
+                    b.Property<int?>("CompanyID")
+                        .HasColumnType("int");
+
+                    b.HasIndex("CompanyID");
+
                     b.HasDiscriminator().HasValue("Client");
                 });
 
@@ -273,8 +303,14 @@ namespace SCMVCWebApp.Migrations
                 {
                     b.HasBaseType("SCMVCWebApp.Models.ApplicationUser");
 
+                    b.Property<int?>("CompanyID")
+                        .HasColumnType("int")
+                        .HasColumnName("Consultant_CompanyID");
+
                     b.Property<string>("Specialization")
                         .HasColumnType("nvarchar(max)");
+
+                    b.HasIndex("CompanyID");
 
                     b.HasDiscriminator().HasValue("Consultant");
                 });
@@ -328,6 +364,38 @@ namespace SCMVCWebApp.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SCMVCWebApp.Models.ProjectModel.Project", b =>
+                {
+                    b.HasOne("SCMVCWebApp.Models.CompanyModel.Company", "ForCompany")
+                        .WithMany()
+                        .HasForeignKey("CompanyID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ForCompany");
+                });
+
+            modelBuilder.Entity("SCMVCWebApp.Models.ClientModel.Client", b =>
+                {
+                    b.HasOne("SCMVCWebApp.Models.CompanyModel.Company", null)
+                        .WithMany("ClientAtCompany")
+                        .HasForeignKey("CompanyID");
+                });
+
+            modelBuilder.Entity("SCMVCWebApp.Models.ConsultantModel.Consultant", b =>
+                {
+                    b.HasOne("SCMVCWebApp.Models.CompanyModel.Company", null)
+                        .WithMany("ConsultantsWorkingCompany")
+                        .HasForeignKey("CompanyID");
+                });
+
+            modelBuilder.Entity("SCMVCWebApp.Models.CompanyModel.Company", b =>
+                {
+                    b.Navigation("ClientAtCompany");
+
+                    b.Navigation("ConsultantsWorkingCompany");
                 });
 #pragma warning restore 612, 618
         }

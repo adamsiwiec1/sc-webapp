@@ -16,16 +16,16 @@ namespace SCMVCWebApp.Models.ProjectModel
         [Required]
         public string ProjectName { get; set; }
 
-        //[Required]
-        //public int CompanyID { get; set; }
+        [Required]
+        public int CompanyID { get; set; }
 
-        //[ForeignKey("CompanyID")]
-        //public Company ForCompany { get; set; }
+        [ForeignKey("CompanyID")]
+        public Company ForCompany { get; set; }
 
-        public Project(string projectName) //, int companyID)
+        public Project(string projectName, int companyID)
         {
             this.ProjectName = projectName;
-            //this.CompanyID = companyID;
+            this.CompanyID = companyID;
 
         }
         public Project()

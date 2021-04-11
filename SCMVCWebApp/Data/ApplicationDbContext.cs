@@ -20,11 +20,11 @@ namespace SCMVCWebApp.Data
 
         public DbSet<Consultant> Consultant { get; set; }
 
-        //public DbSet<Company> Company { get; set; }
+        public DbSet<Company> Company { get; set; }
 
-        public DbSet<SCMVCWebApp.Models.ProjectModel.Project> Project { get; set; } // Spent like 1 hour trying to figure out this migration error, LOL. Stupid Visual studio..... not my fault.....
+        public DbSet<Models.ProjectModel.Project> Project { get; set; } // Spent like 1 hour trying to figure out this migration error, lol. Stupid Visual studio..... not my fault.....
 
-        //public DbSet<CompanyConsultant> CompanyConsultant { get; set; }
+        public DbSet<CompanyConsultant> CompanyConsultant { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

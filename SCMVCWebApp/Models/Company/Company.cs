@@ -19,16 +19,16 @@ namespace SCMVCWebApp.Models.CompanyModel
         [Required(ErrorMessage = "Please enter a company category.")] //Eventually want to make this another table we track data for
         public string Category { get; set; }
 
-        List<Client> ClientAtCompany { get; set; }
+        public List<Client> ClientAtCompany { get; set; }
 
-        List<Consultant> ConsultantsWorkingCompany { get; set; }
+        public List<Consultant> ConsultantsWorkingCompany { get; set; }
 
         public Company(string companyName, string category)
         {
             this.Name = companyName;
             this.Category = category;
-            //this.ClientAtCompany = new List<Client>();
-            //this.ConsultantsWorkingCompany = new List<Consultant>();
+            this.ClientAtCompany = new List<Client>();
+            this.ConsultantsWorkingCompany = new List<Consultant>();
         }
 
 

@@ -17,6 +17,7 @@ namespace SCMVCWebApp.Models.ConsultantModel
             base(firstname, lastname, address, phoneNumber, email, password)
         {
             this.Specialization = specialization;
+            //this.CompaniesResponsibleFor = new List<Company>();
         }
 
         public Consultant()

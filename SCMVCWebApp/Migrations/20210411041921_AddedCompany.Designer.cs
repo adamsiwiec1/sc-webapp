@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SCMVCWebApp.Data;
 
 namespace SCMVCWebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210411041921_AddedCompany")]
+    partial class AddedCompany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -225,29 +227,6 @@ namespace SCMVCWebApp.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("SCMVCWebApp.Models.CompanyConsultant.CompanyConsultant", b =>
-                {
-                    b.Property<int>("CompanyConsultantID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CompanyID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConsultantId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("CompanyConsultantID");
-
-                    b.HasIndex("CompanyID");
-
-                    b.HasIndex("ConsultantId");
-
-                    b.ToTable("CompanyConsultant");
-                });
-
             modelBuilder.Entity("SCMVCWebApp.Models.CompanyModel.Company", b =>
                 {
                     b.Property<int>("CompanyID")
@@ -266,27 +245,6 @@ namespace SCMVCWebApp.Migrations
                     b.HasKey("CompanyID");
 
                     b.ToTable("Company");
-                });
-
-            modelBuilder.Entity("SCMVCWebApp.Models.ProjectModel.Project", b =>
-                {
-                    b.Property<int>("ProjectID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CompanyID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ProjectName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ProjectID");
-
-                    b.HasIndex("CompanyID");
-
-                    b.ToTable("Project");
                 });
 
             modelBuilder.Entity("SCMVCWebApp.Models.ApplicationUser", b =>
@@ -385,36 +343,6 @@ namespace SCMVCWebApp.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("SCMVCWebApp.Models.CompanyConsultant.CompanyConsultant", b =>
-                {
-                    b.HasOne("SCMVCWebApp.Models.CompanyModel.Company", "CompanyReference")
-                        .WithMany()
-                        .HasForeignKey("CompanyID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SCMVCWebApp.Models.ConsultantModel.Consultant", "ConsultantReference")
-                        .WithMany()
-                        .HasForeignKey("ConsultantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CompanyReference");
-
-                    b.Navigation("ConsultantReference");
-                });
-
-            modelBuilder.Entity("SCMVCWebApp.Models.ProjectModel.Project", b =>
-                {
-                    b.HasOne("SCMVCWebApp.Models.CompanyModel.Company", "ForCompany")
-                        .WithMany()
-                        .HasForeignKey("CompanyID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ForCompany");
                 });
 
             modelBuilder.Entity("SCMVCWebApp.Models.ClientModel.Client", b =>

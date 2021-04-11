@@ -60,39 +60,39 @@ namespace SCMVCWebApp.Data
             //    database.SaveChanges();
             //}
 
-            if (!database.ApplicationUser.Any())
-            {
-                Client client = new Client("Bob", "Johnson", "123 CompanyA Street, Reston, VA 20148 ", "7034849777", "bob@companya.com", "CompanyAClient1!"); //"CEO", 1);
-                userManager.CreateAsync(client).Wait();
-                userManager.AddToRoleAsync(client, clientRole).Wait();
+            //if (!database.ApplicationUser.Any())
+            //{
+            //    Client client = new Client("Bob", "Johnson", "123 CompanyA Street, Reston, VA 20148 ", "7034849777", "bob@companya.com", "CompanyAClient1!"); //"CEO", 1);
+            //    userManager.CreateAsync(client).Wait();
+            //    userManager.AddToRoleAsync(client, clientRole).Wait();
 
-                client = new Client("Linda", "Thompson", "123 CompanyA Street, Reston, VA 20148 ", "7034849777", "linda@companya.com", "CompanyAClient2!"); //"IT Director", 1);
-                userManager.CreateAsync(client).Wait();
-                userManager.AddToRoleAsync(client, clientRole).Wait();
+            //    client = new Client("Linda", "Thompson", "123 CompanyA Street, Reston, VA 20148 ", "7034849777", "linda@companya.com", "CompanyAClient2!"); //"IT Director", 1);
+            //    userManager.CreateAsync(client).Wait();
+            //    userManager.AddToRoleAsync(client, clientRole).Wait();
 
 
-                Consultant consultant = new Consultant("Chase", "Letourneau", "123 Forest Glenn Drive, Ashburn, VA 20148", "7034849955", "chase@siwiectech.com", "ChaseIsCool123!", "Back End Development");
-                userManager.CreateAsync(consultant).Wait();
-                userManager.AddToRoleAsync(consultant, consultantRole).Wait();
+            //    Consultant consultant = new Consultant("Chase", "Letourneau", "123 Forest Glenn Drive, Ashburn, VA 20148", "7034849955", "chase@siwiectech.com", "ChaseIsCool123!", "Back End Development");
+            //    userManager.CreateAsync(consultant).Wait();
+            //    userManager.AddToRoleAsync(consultant, consultantRole).Wait();
 
-                consultant = new Consultant("Adam", "Siwiec", "123 Forest Glenn Drive, Ashburn, VA 20148", "7034849955", "adam@siwiectech.com", "Sonny12345?", "Project Management and Solutions Architecture");
-                userManager.CreateAsync(consultant).Wait();
-                userManager.AddToRoleAsync(consultant, consultantRole).Wait();
+            //    consultant = new Consultant("Adam", "Siwiec", "123 Forest Glenn Drive, Ashburn, VA 20148", "7034849955", "adam@siwiectech.com", "Sonny12345?", "Project Management and Solutions Architecture");
+            //    userManager.CreateAsync(consultant).Wait();
+            //    userManager.AddToRoleAsync(consultant, consultantRole).Wait();
 
-                consultant = new Consultant("Cole", "Rogers", "123 No Grind Street, CouchTown, XBOX 20148 ", "7034849335", "cole@siwiectech.com", "ColeIsCool123!", "Hanging out with his girlfriend and failing the CCNA");
-                userManager.CreateAsync(consultant).Wait();
-                userManager.AddToRoleAsync(consultant, consultantRole).Wait();
+            //    consultant = new Consultant("Cole", "Rogers", "123 No Grind Street, CouchTown, XBOX 20148 ", "7034849335", "cole@siwiectech.com", "ColeIsCool123!", "Hanging out with his girlfriend and failing the CCNA");
+            //    userManager.CreateAsync(consultant).Wait();
+            //    userManager.AddToRoleAsync(consultant, consultantRole).Wait();
 
-                client = new Client("Ashok", "Mandadi", "123 CompanyB Street, Reston, VA 20148", "7034849777", "ashok@companyb.com", "CompanyBClient1!");
-                userManager.CreateAsync(client).Wait();
-                userManager.AddToRoleAsync(client, clientRole).Wait();
+            //    client = new Client("Ashok", "Mandadi", "123 CompanyB Street, Reston, VA 20148", "7034849777", "ashok@companyb.com", "CompanyBClient1!");
+            //    userManager.CreateAsync(client).Wait();
+            //    userManager.AddToRoleAsync(client, clientRole).Wait();
 
-                ApplicationUser applicationUser = new ApplicationUser("SC", "Admin", "123 Admin Street, Admin, USA 70048", "3040000005", "scadmin@siwiectech.com", "SCAdmin123#!");
-                applicationUser.EmailConfirmed = true;
-                userManager.CreateAsync(applicationUser).Wait();
-                userManager.AddToRoleAsync(applicationUser, administratorRole).Wait();
+            //    ApplicationUser applicationUser = new ApplicationUser("SC", "Admin", "123 Admin Street, Admin, USA 70048", "3040000005", "scadmin@siwiectech.com", "SCAdmin123#!");
+            //    applicationUser.EmailConfirmed = true;
+            //    userManager.CreateAsync(applicationUser).Wait();
+            //    userManager.AddToRoleAsync(applicationUser, administratorRole).Wait();
 
-            }
+            //}
 
             //if (!database.CompanyConsultant.Any())
             //{
@@ -112,41 +112,37 @@ namespace SCMVCWebApp.Data
             //    database.SaveChanges();
 
             //}
-            if (!database.Project.Any())
-            {
-                Project project = new Project("Build an Online store to expand Bob's Customer Base"); //, 1);
-                database.Project.Add(project);
-                database.SaveChanges();
+            //if (!database.Project.Any())
+            //{
+            //    Project project = new Project("Build an Online store to expand Bob's Customer Base", 1);
+            //    database.Project.Add(project);
+            //    database.SaveChanges();
 
-                project = new Project("Create a DBMS for inventory and sales"); //,  1);
-                database.Project.Add(project);
-                database.SaveChanges();
+            //    project = new Project("Create a DBMS for inventory and sales",  1);
+            //    database.Project.Add(project);
+            //    database.SaveChanges();
 
-                project = new Project("Create a mobile application"); //,  1);
-                database.Project.Add(project);
-                database.SaveChanges();
+            //    project = new Project("Create a mobile application",  1);
+            //    database.Project.Add(project);
+            //    database.SaveChanges();
 
-                project = new Project("Mine data on competitors - ethically"); //,  1);
-                database.Project.Add(project);
-                database.SaveChanges();
+            //    project = new Project("Mine data on competitors - ethically",  1);
+            //    database.Project.Add(project);
+            //    database.SaveChanges();
 
-                project = new Project("Build a responsive, clean webpage where customers can place their orders."); //,  2);
-                database.Project.Add(project);
-                database.SaveChanges();
+            //    project = new Project("Build a responsive, clean webpage where customers can place their orders.",  2);
+            //    database.Project.Add(project);
+            //    database.SaveChanges();
 
-                project = new Project("Create a profit/sucess matrix for all the stores and emphasize solutions where needed"); //,  2);
-                database.Project.Add(project);
-                database.SaveChanges();
+            //    project = new Project("Create a profit/sucess matrix for all the stores and emphasize solutions where needed",  2);
+            //    database.Project.Add(project);
+            //    database.SaveChanges();
 
-                project = new Project("Mine data about the surrounding market. Where do people eat? - 'ethical' hacking involved"); //,  1);
-                database.Project.Add(project);
-                database.SaveChanges();
+            //    project = new Project("Mine data about the surrounding market. Where do people eat? - 'ethical' hacking involved",  1);
+            //    database.Project.Add(project);
+            //    database.SaveChanges();
 
-            }
-
-
-
-
+            //}
 
         }
     }
