@@ -28,12 +28,13 @@
 							<img src="~/img/demo/avatars/avatar-admin-lg.png" class="img-responsive rounded-circle img-thumbnail" alt="thumbnail">
 						</div>
 						<div class="form-group">
-							<h3>
-								@(Settings.Theme.User)
-								<small>
-									@(Settings.Theme.Email)
-								</small>
-							</h3>
+                            <h3>
+                                @(Settings.Theme.User)
+                                @(User.Identity.Name)
+                                <small>
+                                    @(Settings.Theme.Email)
+                                </small>
+                            </h3>
 							<p class="text-white opacity-50">Enter password to unlock screen</p>
 							<div class="input-group input-group-lg">
 								<input type="text" class="form-control" placeholder="Password">

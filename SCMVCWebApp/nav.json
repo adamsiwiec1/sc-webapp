@@ -1,0 +1,83 @@
+{
+  "version": "4",
+  "lists": [
+    {
+      "title": "ASP.NET Core 3.1",
+      "roles": []
+    },
+    {
+      "title": "Dashboard",
+      "href": "aspnetcore_welcome.html",
+      "icon": "fal fa-graduation-cap",
+      "roles": []
+    },
+    {
+      "title": "Projects",
+      "icon": "fal fa-folder-open",
+      "roles": [
+        "Administrator"
+      ],
+      "items": [
+        {
+          "title": "In progress",
+          "href": "authorization_users.html",
+          "roles": []
+        },
+        {
+          "title": "Completed",
+          "href": "authorization_roles.html",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "title": "Services",
+      "icon": "fal fa-shield-alt",
+      "roles": [],
+      "items": [
+        {
+          "title": "Penetration Testing",
+          "href": "aspnetcore_editions.html",
+          "roles": []
+        },
+        {
+          "title": "Database Management",
+          "href": "aspnetcore_faq.html",
+          "roles": []
+        },
+        {
+          "title": "Web Design",
+          "href": "aspnetcore_interactive.html",
+          "roles": []
+        },
+        {
+          "title": "Security solutions",
+          "href": "aspnetcore_interactive.html",
+          "roles": []
+        },
+        {
+          "title": "General IT Support",
+          "href": "aspnetcore_interactive.html",
+          "roles": []
+        }
+      ]
+    },
+    {
+      "title": "Billing",
+      "icon": "fal fa-book",
+      "roles": [],
+      "items": [
+        {
+          "title": "My Invoices",
+          "href": "documentation_introduction.html",
+          "roles": []
+        },
+        {
+          "title": "Current Costs",
+          "href": "documentation_getting_started.html",
+          "roles": []
+        }
+      ]
+    }
+  ]
+}
