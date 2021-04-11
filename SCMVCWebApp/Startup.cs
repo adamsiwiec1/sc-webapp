@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using SCMVCWebApp.Data;
 using SCMVCWebApp.Models;
+using SCMVCWebApp.Models.ApplicationUserModel;
+using SCMVCWebApp.Models.ConsultantModel;
 using SCMVCWebApp.Services;
 
 namespace SCMVCWebApp
@@ -58,14 +60,14 @@ namespace SCMVCWebApp
                 )
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-
             services.AddTransient<IEmailSender, EmailSender>();
-
-            services
-                .AddControllersWithViews();
-
+            services.AddTransient<IConsultantRepo, ConsultantRepo>();
+            services.AddTransient<IApplicationUserRepo, ApplicationUserRepo>();
+            
+            
+            
+            services.AddControllersWithViews();
             services.AddRazorPages();
-
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Identity/Account/Login";

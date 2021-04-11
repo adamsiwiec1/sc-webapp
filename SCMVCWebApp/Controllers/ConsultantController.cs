@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SCMVCWebApp.Models;
+using SCMVCWebApp.Models.ApplicationUserModel;
+using SCMVCWebApp.Models.ConsultantModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +11,18 @@ namespace SCMVCWebApp.Controllers
 {
     public class ConsultantController : Controller
     {
-        public IActionResult Index()
+        private IConsultantRepo iConsultantRepo;
+
+        public ConsultantController(IConsultantRepo consultantRepo)
         {
-            return View();
+            iConsultantRepo = consultantRepo;
+        }
+
+        public IActionResult ConsultantHome()
+        {
+            string userId = iConsultantRepo.FindLoggedInUser();
+            Consultant consultant = iConsultantRepo.FindConsultant(userId);
+            return View(consultant);
         }
     }
 }

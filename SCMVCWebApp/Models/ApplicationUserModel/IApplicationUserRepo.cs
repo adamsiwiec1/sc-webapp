@@ -9,6 +9,6 @@ namespace SCMVCWebApp.Models.ApplicationUserModel
     {
         string FindLoggedInUser();
         List<ApplicationUser> ListAllUsers();
-
+        ApplicationUser FindUser(string userId);
     }
 }
