@@ -19,6 +19,8 @@ using SCMVCWebApp.Models.ConsultantModel;
 
 namespace SCMVCWebApp.Areas.Identity.Pages.Account
 {
+    //test change
+
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
