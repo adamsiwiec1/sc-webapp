@@ -23,7 +23,7 @@ namespace SCMVCWebApp.Models.ApplicationUserModel
             return httpContext.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
         }
 
-        public ApplicationUser FindUser(string studentId)
+        public ApplicationUser FindAppUser(string studentId)
         {
             ApplicationUser appUser = database.ApplicationUser.Find(studentId);
             return appUser;

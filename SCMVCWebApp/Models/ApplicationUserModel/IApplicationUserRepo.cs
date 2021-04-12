@@ -8,7 +8,7 @@ namespace SCMVCWebApp.Models.ApplicationUserModel
     public interface IApplicationUserRepo
     {
         string FindLoggedInUser();
+        ApplicationUser FindAppUser(string userId);
         List<ApplicationUser> ListAllUsers();
-        ApplicationUser FindUser(string userId);
     }
 }
