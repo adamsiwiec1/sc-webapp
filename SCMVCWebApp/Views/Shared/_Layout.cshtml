@@ -1,38 +1,104 @@
-<!DOCTYPE html>
-<partial name="_CopyrightHeader"/>
-<html lang="en">
-	<head>
-		<partial name="_Head"/>
-		@RenderSection("HeadBlock", required: false)
-	</head>
-	<body class="mod-bg-1 mod-nav-link mod-nav-link @ViewBag.PreemptiveClass">
-		<partial name="_ScriptsLoadingSaving"/>
-		<div class="page-wrapper">
-			<div class="page-inner">
-				<partial name="_LeftPanel"/>
-				<div class="page-content-wrapper">
-					<partial name="_PageHeader"/>
-                    <main id="js-page-content" role="main" class="page-content">
-                        @if (ViewBag.PreemptiveClass?.Length > 0)
-{
-                        } else {
-                            <partial name="_PageBreadcrumb"/>
-                            <div class="subheader"><partial name="_PageHeading"/>@RenderSection("Subheaderblock", required: false)</div>
-                        }
-                        @RenderBody()
-                    </main>
-					<partial name="_PageContentOverlay"/>
-					<partial name="_PageFooter"/>
-					<partial name="_ShortcutModal"/>
-					<partial name="_ColorProfileReference"/>
-				</div>
-			</div>
-		</div>
-		<partial name="_ShortcutMenu"/>
-		<partial name="_ShortcutMessenger"/>
-		<partial name="_PageSettings"/>
-		<partial name="_GoogleAnalytics"/>
-		<partial name="_ScriptsBasePlugins"/>
-		@RenderSection("ScriptsBlock", required: false)
-	</body>
-</html>
+
+@if (User.Identity.IsAuthenticated)
+{@*<!DOCTYPE html>
+    <partial name="_CopyrightHeader"/>
+    <html lang="en">
+        <head>
+            <partial name="_Head"/>
+            @RenderSection("HeadBlock", required: false)
+        </head>
+        <body class="mod-bg-1 mod-nav-link mod-nav-link @ViewBag.PreemptiveClass">
+            <partial name="_ScriptsLoadingSaving"/>
+            <div class="page-wrapper">
+                <div class="page-inner">
+                    <partial name="_LeftPanel"/>
+                    <div class="page-content-wrapper">
+                        <partial name="_PageHeader"/>
+                        <main id="js-page-content" role="main" class="page-content">
+                            @if (ViewBag.PreemptiveClass?.Length > 0)
+                            {
+                            }
+                            else
+                            {
+                                <partial name="_PageBreadcrumb"/>
+                                <div class="subheader"><partial name="_PageHeading"/>@RenderSection("Subheaderblock", required: false)</div>
+                            }
+                            @RenderBody()
+                        </main>
+                        <partial name="_PageContentOverlay"/>
+                        <partial name="_PageFooter"/>
+                        <partial name="_ShortcutModal"/>
+                        <partial name="_ColorProfileReference"/>
+                    </div>
+                </div>
+            </div>
+            <partial name="_ShortcutMenu"/>
+            <partial name="_ShortcutMessenger"/>
+            <partial name="_PageSettings"/>
+            <partial name="_GoogleAnalytics"/>
+            <partial name="_ScriptsBasePlugins"/>
+            @RenderSection("ScriptsBlock", required: false)
+        </body>
+    </html>*@ //THIS IS THE GENERIC MVC LAYOUT
+
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <partial name="_Head" />
+                    @RenderSection("HeadBlock", required: false)
+                </head>
+                <body class="mod-bg-1 mod-nav-link mod-nav-link @ViewBag.PreemptiveClass">
+                    <header>
+                        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                            <div class="container">
+                                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Siwiec Consulting</a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                                    <ul class="navbar-nav flex-grow-1">
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                        </li>
+                                    </ul>
+                                    <partial name="_LoginPartial" />
+                                </div>
+                            </div>
+                        </nav>
+                    </header>
+                    <div class="container">
+                        <main role="main" class="pb-3">
+                            @RenderBody()
+                        </main>
+                    </div>
+
+                    <footer class="border-top footer text-muted">
+                        <div class="container">
+                            &copy; 2021 - vbfgvgvcusgMVCWEBAPPP - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </div>
+                    </footer>
+                    <partial name="_ShortcutMenu" />
+                    <partial name="_ShortcutMessenger" />
+                    <partial name="_PageSettings" />
+                    <partial name="_GoogleAnalytics" />
+                    <partial name="_ScriptsBasePlugins" />
+                    @RenderSection("ScriptsBlock", required: false)
+                </body>
+                </html>
+
+
+
+        }
+        else
+        {
+            <div style="display: none">
+                @RenderBody()
+            </div>
+
+            <h3>Sorry, you are not authenticated. Please log in.</h3>
+            <partial name="_LoginPartial" model="Model" />
+        }

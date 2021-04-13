@@ -1,13 +1,28 @@
-﻿namespace SCMVCWebApp.Models
+﻿using SCMVCWebApp.Models.ApplicationUserModel;
+
+namespace SCMVCWebApp.Models
 {
     public class Theme
     {
+        private IApplicationUserRepo iAppUserRepo;
+
+        public Theme(IApplicationUserRepo appUserRepo)
+        {
+            iAppUserRepo = appUserRepo;
+            this.Email = iAppUserRepo.FindAppUser(iAppUserRepo.FindLoggedInUser()).Email;
+        }
+        public Theme() { }
+
+
         public string ThemeVersion { get; set; }
         public string IconPrefix { get; set; }
         public string Logo { get; set; }
         public string User { get; set; }
         public string Role { get; set; } = "Administrator";
-        public string Email { get; set; }
+        //public string Email { get { if (iAppUserRepo.FindLoggedInUser() != null) { return iAppUserRepo.FindAppUser(iAppUserRepo.FindLoggedInUser()).Email; } else { return "Not logged in"; } } }
+
+        public string Email { get; set;  }
+
         public string Twitter { get; set; }
         public string Avatar { get; set; }
     }

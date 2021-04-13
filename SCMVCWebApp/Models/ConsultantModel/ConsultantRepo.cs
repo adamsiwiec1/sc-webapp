@@ -6,14 +6,14 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace SCMVCWebApp.Models.ApplicationUserModel
+namespace SCMVCWebApp.Models.ConsultantModel
 {
-    public class ApplicationUserRepo : IApplicationUserRepo
+    public class ConsultantRepo : IConsultantRepo
     {
         private ApplicationDbContext database;
         private IHttpContextAccessor httpContext;
 
-        public ApplicationUserRepo(ApplicationDbContext applicationDbContext, IHttpContextAccessor contextAccesor)
+        public ConsultantRepo(ApplicationDbContext applicationDbContext, IHttpContextAccessor contextAccesor)
         {
             this.database = applicationDbContext;
         }
@@ -23,15 +23,16 @@ namespace SCMVCWebApp.Models.ApplicationUserModel
             return httpContext.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
         }
 
-        public ApplicationUser FindAppUser(string studentId)
+        public Consultant FindConsultant(string consultantId)
         {
-            ApplicationUser appUser = database.ApplicationUser.Find(studentId);
-            return appUser;
+            Consultant consultant = database.Consultant.Find(consultantId);
+            return consultant;
         }
 
-        public List<ApplicationUser> ListAllUsers()
+        public List<Consultant> ListAllConsultants()
         {
-            return database.ApplicationUser.ToList();
+            return database.Consultant.ToList();
         }
+
     }
 }
