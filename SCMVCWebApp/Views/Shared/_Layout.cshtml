@@ -70,23 +70,27 @@
                             </div>
                         </nav>
                     </header>
-                    <div class="container">
-                        <main role="main" class="pb-3">
-                            @RenderBody()
-                        </main>
-                    </div>
+                    <partial name="_ScriptsLoadingSaving" />
+                    <div class="page-wrapper">
+                        <div class="page-inner">
+                            <partial name="_LeftPanel" />
+                            <div class="container">
+                                <main role="main" class="pb-3">
+                                    @RenderBody()
+                                </main>
+                            </div>
 
-                    <footer class="border-top footer text-muted">
-                        <div class="container">
-                            &copy; 2021 - vbfgvgvcusgMVCWEBAPPP - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </div>
-                    </footer>
-                    <partial name="_ShortcutMenu" />
-                    <partial name="_ShortcutMessenger" />
-                    <partial name="_PageSettings" />
-                    <partial name="_GoogleAnalytics" />
-                    <partial name="_ScriptsBasePlugins" />
-                    @RenderSection("ScriptsBlock", required: false)
+                            <footer class="border-top footer text-muted">
+                                <div class="container">
+                                    &copy; 2021 - vbfgvgvcusgMVCWEBAPPP - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                </div>
+                            </footer>
+                            <partial name="_ShortcutMenu" />
+                            <partial name="_ShortcutMessenger" />
+                            <partial name="_PageSettings" />
+                            <partial name="_GoogleAnalytics" />
+                            <partial name="_ScriptsBasePlugins" />
+                            @RenderSection("ScriptsBlock", required: false)
                 </body>
                 </html>
 
