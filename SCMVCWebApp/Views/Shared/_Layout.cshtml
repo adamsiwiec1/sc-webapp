@@ -48,7 +48,7 @@
                     @RenderSection("HeadBlock", required: false)
                 </head>
                 <body class="mod-bg-1 mod-nav-link mod-nav-link @ViewBag.PreemptiveClass">
-                    <header>
+                    @*<header>
                         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
                             <div class="container">
                                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Siwiec Consulting</a>
@@ -69,15 +69,21 @@
                                 </div>
                             </div>
                         </nav>
-                    </header>
+                    </header>*@
                     <partial name="_ScriptsLoadingSaving" />
                     <div class="page-wrapper">
                         <div class="page-inner">
                             <partial name="_LeftPanel" />
-                            <div class="container">
-                                <main role="main" class="pb-3">
+                            <div class="page-content-wrapper">
+                                <partial name="_PageHeader" />
+                                @* <div class="container"> *@
+                                <main id="js-page-content" role="main" class="page-content">
                                     @RenderBody()
                                 </main>
+                                <partial name="_PageContentOverlay" />
+                                <partial name="_PageFooter" />
+                                <partial name="_ShortcutModal" />
+                                @* </div> *@
                             </div>
                             </div>
                         </div>
