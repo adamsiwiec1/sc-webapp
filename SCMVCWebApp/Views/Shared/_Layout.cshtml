@@ -77,12 +77,18 @@
                             <div class="page-content-wrapper">
                                 <partial name="_PageHeader" />
                                 @* <div class="container"> *@
-                                <main id="js-page-content" role="main" class="page-content">
-                                    @RenderBody()
-                                </main>
-                                <partial name="_PageContentOverlay" />
-                                <partial name="_PageFooter" />
-                                <partial name="_ShortcutModal" />
+                            <main id="js-page-content" role="main" class="page-content">
+
+
+                                @if (ViewBag.PreemptiveClass?.Length > 0)
+                                {
+                                }
+                                else
+                                {
+                            <partial name="_PageBreadcrumb" />
+                            <div class="subheader"><partial name="_PageHeading" />@RenderSection("Subheaderblock", required: false)</div>}
+                                @RenderBody()
+                            </main>
                                 @* </div> *@
                             </div>
                             </div>
