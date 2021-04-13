@@ -71,7 +71,7 @@ namespace SCMVCWebApp.Data
                 userManager.AddToRoleAsync(client, clientRole).Wait();
 
 
-                Consultant consultant = new Consultant("Chase", "Letourneau", "123 Forest Glenn Drive, Ashburn, VA 20148", "7034849955", "chase@siwiectech.com", "ChaseIsCool123!", "Back End Development");
+                Consultant consultant = new Consultant("Chase", "Letourneau", "123 Forest Glenn Drive, Ashburn, VA 20148", "7034849955", "chase@siwiectech.com", "chase!", "Back End Development");
                 userManager.CreateAsync(consultant).Wait();
                 userManager.AddToRoleAsync(consultant, consultantRole).Wait();
 
