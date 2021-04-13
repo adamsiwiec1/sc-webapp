@@ -6,7 +6,7 @@
       "roles": []
     },
     {
-      "title": "Dashboard",
+      "title": "Home",
       "href": "aspnetcore_welcome.html",
       "icon": "fal fa-graduation-cap",
       "roles": []
@@ -18,6 +18,11 @@
         "Administrator"
       ],
       "items": [
+        {
+          "title": "Dashboard",
+          "href": "authorization_users.html",
+          "roles": []
+        },
         {
           "title": "In progress",
           "href": "authorization_users.html",

@@ -8,9 +8,12 @@ namespace SCMVCWebApp.Controllers
 {
     public class SCWebAppController : Controller
     {
-        public IActionResult Login()
-        {
-            return View();
-        }
+
+
+        //public 
+
+
+
+
     }
 }
