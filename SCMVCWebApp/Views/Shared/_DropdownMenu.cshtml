@@ -1,4 +1,9 @@
-<div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SigninManager
+@if (SigninManager.IsSignedIn(User))
+{
+    <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
     <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
         <span class="mr-2">
             <img src="~/img/demo/avatars/@(Settings.Theme.Avatar)" class="rounded-circle profile-image" alt="@(Settings.Theme.User)">
@@ -28,3 +33,14 @@
     <span data-i18n="drpdwn.page-logout">Logout</span>
     <span class="float-right fw-n">@(User.Identity.Name)</span>
 </a>
+
+}
+else
+{
+    <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li>
+}

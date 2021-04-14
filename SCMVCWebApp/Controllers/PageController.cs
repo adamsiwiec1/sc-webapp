@@ -47,14 +47,15 @@ namespace SCMVCWebApp.Controllers
         public IActionResult LoginAlt() => View();
         public IActionResult Profile()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                string userId = iAppUserRepo.FindLoggedInUser();
-                ApplicationUser appUser = iAppUserRepo.FindAppUser(userId);
-                return View(appUser);
-            }
-            else
-            { return View(); }
+            //if (User.Identity.IsAuthenticated)
+            //{
+            //    string userId = iAppUserRepo.FindLoggedInUser();
+            //    ApplicationUser appUser = iAppUserRepo.FindAppUser(userId);
+            //    return View(appUser);
+            //}
+            //else
+            //{ return View(); }
+            return View();
         }
         public IActionResult Projects() => View();
         public IActionResult Register() => View();
