@@ -14,6 +14,7 @@ using SCMVCWebApp.Data;
 using SCMVCWebApp.Models;
 using SCMVCWebApp.Models.ApplicationUserModel;
 using SCMVCWebApp.Models.ConsultantModel;
+using SCMVCWebApp.Models.ProjectModel;
 using SCMVCWebApp.Services;
 
 namespace SCMVCWebApp
@@ -63,6 +64,7 @@ namespace SCMVCWebApp
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<IConsultantRepo, ConsultantRepo>();
             services.AddTransient<IApplicationUserRepo, ApplicationUserRepo>();
+            services.AddTransient<IProjectRepo, ProjectRepo>();
             
             
             

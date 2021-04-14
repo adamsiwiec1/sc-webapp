@@ -35,6 +35,7 @@ namespace SCMVCWebApp.Models
             this.PasswordHash = passwordHasher.HashPassword(this, password);
             //this creates a new GUID for SecurityStamp
             this.SecurityStamp = Guid.NewGuid().ToString();
+            
         }
 
         public ApplicationUser() { } 

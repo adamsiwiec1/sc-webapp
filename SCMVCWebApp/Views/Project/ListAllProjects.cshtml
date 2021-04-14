@@ -1,0 +1,44 @@
+﻿@model List<SCMVCWebApp.Models.ProjectModel.Project>
+@{
+    ViewData["Title"] = "ListAllProjects";
+}
+
+<h1>ListAllProjects</h1>
+
+
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Project Name</th>
+            <th>Company ID</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (SCMVCWebApp.Models.ProjectModel.Project project in Model)
+        {
+        <tr>
+            <td>@project.ProjectName</td>
+            <td>@project.CompanyID</td>
+            @*@if (project.ForCompany.Name != null)
+            {
+                <td>@project.ForCompany.Name</td>
+            }
+            else
+            {
+                <td>Null</td>
+            }*@
+
+        </tr>
+        }
+    </tbody>
+
+
+
+
+</table>
+
+

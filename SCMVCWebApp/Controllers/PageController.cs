@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SCMVCWebApp.Data;
 using SCMVCWebApp.Models;
 using SCMVCWebApp.Models.ApplicationUserModel;
 
@@ -7,8 +8,10 @@ namespace SCMVCWebApp.Controllers
     public class PageController : Controller
     {
         private IApplicationUserRepo iAppUserRepo;
-        public PageController(IApplicationUserRepo appUserRepo)
+        private ApplicationDbContext database;
+        public PageController(IApplicationUserRepo appUserRepo, ApplicationDbContext dbContext)
         {
+            database = dbContext;
             iAppUserRepo = appUserRepo;
         }
 
@@ -26,7 +29,7 @@ namespace SCMVCWebApp.Controllers
         public IActionResult InboxRead() => View();
         public IActionResult InboxWrite() => View();
         public IActionResult Invoice() => View();
-
+        public IActionResult AccountSettings() => View();
         public IActionResult Locked()
         {
             if (User.Identity.IsAuthenticated)
@@ -42,7 +45,17 @@ namespace SCMVCWebApp.Controllers
 
         public IActionResult Login() => View();
         public IActionResult LoginAlt() => View();
-        public IActionResult Profile() => View();
+        public IActionResult Profile()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string userId = iAppUserRepo.FindLoggedInUser();
+                ApplicationUser appUser = iAppUserRepo.FindAppUser(userId);
+                return View(appUser);
+            }
+            else
+            { return View(); }
+        }
         public IActionResult Projects() => View();
         public IActionResult Register() => View();
         public IActionResult Search() => View();
